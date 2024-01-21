@@ -56,6 +56,7 @@ export const useStyle = (w : number, h : number, scale : number) : UseStyleProps
     const background : string = "indigo"
     const middleBarBackground : string = "#212121"
     const position = 'absolute'
+    const sf : number = Math.sin(scale * Math.PI)
     return {
         parentStyle() : CSSProperties {
             const left = `${w / 2}px`
@@ -80,9 +81,9 @@ export const useStyle = (w : number, h : number, scale : number) : UseStyleProps
             return {
                 position,
                 left: `${-barW / 2}px`,
-                top: `${-size / 2}px`,
+                top: `${-size * 0.5 * sf}px`,
                 width: `${barW}px`,
-                height: `${size}px`,
+                height: `${size * sf}px`,
                 transform: `rotate(${90 * i}deg)`,
                 background: middleBarBackground 
             }

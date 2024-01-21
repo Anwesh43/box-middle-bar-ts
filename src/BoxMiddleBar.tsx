@@ -14,7 +14,7 @@ const BoxMiddleBar = (props : BoxMiddleBarProps) => {
     const {parentStyle, boxStyle, middleBarStyle} = useStyle(props.w, props.h, props.scale)
     return (
         <div style = {parentStyle()}>
-            <div style = {boxStyle()}>
+            <div style = {boxStyle()} onClick = {() => props.onClick()}>
             </div>
             {[0, 1].map((i : number) => (<div style = {middleBarStyle(i)}></div>))}
         </div>

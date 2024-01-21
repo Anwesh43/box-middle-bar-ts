@@ -6,11 +6,11 @@ const withContext = (MainFc : React.FC<any>) : React.FC<any> => {
         const {w, h} = useDimension()
         const {scale, start : onClick} = useAnimatedScale()
         const newProps = {
+            ...props,
             w, 
             h, 
             scale, 
-            onClick
-            ...props
+            onClick 
         }
         return (<MainFc {...newProps}>
 
